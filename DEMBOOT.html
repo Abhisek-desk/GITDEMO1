@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lovely India</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="icon" type="image/jpg" href="earth.jpg">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    h1 {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      background: linear-gradient(45deg, #ff6b6b, #4caf50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: left;
+      color: #4CAF50;
+      /* Green color for header */
+      /* background: url("earth.jpg"); */
+      margin-left: 15%;
+    }
+
+    /* p{
+        text-align: left;
+        color: black;
+        margin-left: 20%;
+      } */
+    nav {
+      background-color: #2c3e50;
+      padding: 1rem 0;
+    }
+
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      cursor: pointer;
+    }
+
+    nav ul li a {
+      color: #fff;
+      font-weight: bold;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    nav ul li a:hover {
+      color: #28d1f7;
+      font-size: 18px;
+      border: 2px;
+      border-style: solid;
+      border-color: #ffffff;
+      border-radius: 6px;
+      padding: 2px;
+    }
+
+    .carousel-inner {
+      height: 800px;
+      width: 1500px;
+      margin: 10px;
+      padding: 25px;
+    }
+
+    .row {
+      justify-content: space-evenly;
+    }
+
+    #row1 {
+      padding: 30px;
+      background: url("Torism2.jpg");
+    }
+
+    #row2 {
+      background: url("taj.jpeg");
+    }
+
+    .card {
+      margin-bottom: 50px;
+      perspective: 1000px;
+      animation: appear linear;
+      animation-timeline: view() ;
+      animation-range: entry 0% cover 40%;
+    }
+
+    form {
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #000000;
+      padding: 20px;
+      color: #6c757d;
+    }
+
+    /* Custom card styles */
+    @keyframes appear {
+      from{
+        opacity: 0;
+        scale: 0.5;
+        /* transform: translateX(-100px); */
+        /* clip-path: inset(100% 100% 0 0); */
+      }
+      to{
+        opacity: 1;
+        scale: 1;
+        /* transform: translateX(0px); */
+        /* clip-path: inset(0 0 0 0); */
+      }
+    }
+    .card-img-top {
+      height: 400px;
+      width: 250px;
+    }
+
+    .card {
+      width: 18rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out;
+
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card-body {
+      background-color: #f7f7f7;
+      text-align: center;
+    }
+
+    .card-title {
+      color: #007bff;
+    }
+
+    .card-text {
+      color: #555;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #004085;
+    }
+
+    .carousel-caption h5,
+    .carousel-caption p {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .footer {
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+
+    }
+
+    .f1 {
+      background-color: #000;
+      text-transform: capitalize;
+      color: #fff;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .footer-link {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+
+    .btn1 {
+      background-color: white;
+      color: white;
+      font-family: cursive;
+    }
+
+    .video-container {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Button style */
+    .mute-btn {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .mute-btn:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+  </style>
+</head>
+
+<body>
+  <h1><img src="earth.jpg" alt="Logo" style="height:80px;"><i>Lovely!ndia</i></h1>
+  <!-- <p> India's Best kept secret's</p> -->
+  <!-- Nav bar -->
+  <nav> <!--Container tag-->
+    <ul>
+      <li> <a href=#>Adventure</a> </li>
+      <li> <a href=#>Nature </a></li>
+      <li> <a href=#>WildLife </a></li>
+      <li> <a href=#>Plan Your Trip </a></li>
+      <li> <a href=#>About </a></li>
+      <li> <a href=#>Contant Me</a></li>
+    </ul>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </nav>
+
+  <!-- Carousel -->
+  <!-- Fullscreen Video Section -->
+  <div class="video-container">
+    <video autoplay muted loop playsinline>
+      <source src="India in 8k ULTRA HD HDR - Will be King of Asia (60 FPS).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+        aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+        aria-label="Slide 5"></button>
+    </div>
+    <div class="row" id="row1">
+      <!-- Puri Temple -->
+      <div class="card">
+        <img src="Puri.jpg" class="card-img-top" alt="Puri">
+        <div class="card-body">
+          <h5 class="card-title">Jagannath Temple,Puri</h5>
+          <p class="card-text">A mythical place in Puri,Odisha</p>
+          <a href="https://www.google.com/maps/place/Shree+Jagannatha+Temple+Puri/@19.8046343,85.8154144,17.41z/data=!4m14!1m7!3m6!1s0x3a19c6b8bfe386af:0x8f052c84639c7d48!2sShree+Jagannatha+Temple+Puri!8m2!3d19.8049379!4d85.8179386!16zL20vMGN2eDd4!3m5!1s0x3a19c6b8bfe386af:0x8f052c84639c7d48!8m2!3d19.8049379!4d85.8179386!16zL20vMGN2eDd4?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D"
+            class="btn btn-primary" target="_blank">Visit Puri</a>
+          <a href="https://www.shreejagannatha.in/" class="btn btn-primary" target="_blank">Official Site</a>
+          <a href="https://en.wikipedia.org/wiki/Jagannath_Temple,_Puri" class="btn btn-primary" target="_blank">More
+            Details</a>
+        </div>
+      </div>
+
+      <!-- Konark Temple -->
+      <div class="card">
+        <img src="Konarkk.jpg" class="card-img-top" alt="Konark">
+        <div class="card-body">
+          <h5 class="card-title">Konark Sun Temple</h5>
+          <p class="card-text">A mythical place in Puri,Odisha</p>
+          <a href="https://www.google.com/maps/place/Sun+Temple,+Konarak/@19.8875952,86.0896655,17z/data=!4m14!1m7!3m6!1s0x3a19f2a097819bbf:0xed9983ca391e3247!2sSun+Temple,+Konarak!8m2!3d19.8875953!4d86.0945364!16s%2Fm%2F02rd_67!3m5!1s0x3a19f2a097819bbf:0xed9983ca391e3247!8m2!3d19.8875953!4d86.0945364!16s%2Fm%2F02rd_67?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D"
+            class="btn btn-primary" target="_blank">Visit Konark</a>
+          <a href="https://puri.odisha.gov.in/tourism/tourist-places/konark" class="btn btn-primary"
+            target="_blank">Official Site</a>
+          <a href="https://en.wikipedia.org/wiki/Konark_Sun_Temple" class="btn btn-primary" target="_blank">More
+            Details</a>
+        </div>
+      </div>
+
+      <!-- Lingaraj Temple -->
+      <div class="card">
+        <img src="Lingaraj.jpg" class="card-img-top" alt="Bhubaneswar">
+        <div class="card-body">
+          <h5 class="card-title">Lingaraj Temple</h5>
+          <p class="card-text">A mythical place in Bhubaneswar,Odisha.</p>
+          <a href="https://www.google.com/maps/place/Lingaraj+Temple/@20.2384519,85.8337767,17z/data=!4m14!1m7!3m6!1s0x3a19a726c8ffc807:0x212845f89456a2cd!2sLingaraj+Temple!8m2!3d20.2384519!4d85.8337767!16zL20vMGN3eGp2!3m5!1s0x3a19a726c8ffc807:0x212845f89456a2cd!8m2!3d20.2384519!4d85.8337767!16zL20vMGN3eGp2?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D"
+            class="btn btn-primary" target="_blank">Visit Bhubaneswar</a>
+          <a href="https://odishatourism.gov.in/content/tourism/en/discover/attractions/temples-monuments/lingaraja-temple.html"
+            class="btn btn-primary" target="_blank">Official Site</a>
+          <a href="https://en.wikipedia.org/wiki/Lingaraja_Temple" class="btn btn-primary" target="_blank">More
+            Details</a>
+        </div>
+      </div>
+      <!-- Kedarnath Temple -->
+      <div class="card">
+        <img src="Kedarnath.jpg" class="card-img-top" alt="Kedarnath">
+        <div class="card-body">
+          <h5 class="card-title">Kedarnath Temple</h5>
+          <p class="card-text">A mythical place in Kedarnath,Uttarakhand</p>
+          <a href="https://www.google.com/maps/place/Shri+Kedarnath+Jyotirlinga+Temple/@30.7346267,79.0643194,17z/data=!4m14!1m7!3m6!1s0x39083ee08aa6b0b5:0xdbbdae8b9602ee02!2sShri+Kedarnath+Jyotirlinga+Temple!8m2!3d30.7346267!4d79.0668943!16s%2Fm%2F026jlcg!3m5!1s0x39083ee08aa6b0b5:0xdbbdae8b9602ee02!8m2!3d30.7346267!4d79.0668943!16s%2Fm%2F026jlcg?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D"
+            class="btn btn-primary">Visit Kedarnath</a>
+          <a href="https://badrinath-kedarnath.gov.in/AboutUs/shri-kedarnath.aspx" class="btn btn-primary"
+            target="_blank">Official Site</a>
+          <a href="https://en.wikipedia.org/wiki/Kedarnath_Temple" class="btn btn-primary" target="_blank">More
+            Details</a>
+        </div>
+      </div>
+      <!-- Tirupati Temple -->
+      <div class="card">
+        <img src="sri-balaji-temple.jpg" class="card-img-top" alt="Tirupati">
+        <div class="card-body">
+          <h5 class="card-title">Tirupati Balaji Temple</h5>
+          <p class="card-text">A mythical place in Tirupati,AndhraPradesh</p>
+          <a href="https://www.google.com/maps/place/Sri+Venkateswara+Swamy+Temple+(Tirumala+Tirupathi+Devasthanam)/@13.6835832,79.3467442,17z/data=!4m14!1m7!3m6!1s0x3bb2b500402a7d01:0x8e42946d9299d5b8!2sBalaji+temple!8m2!3d13.6835832!4d79.3493191!16s%2Fg%2F11xft4226k!3m5!1s0x3bb2b562a5cc709b:0x407a00bd52587d32!8m2!3d13.6832597!4d79.3472794!16s%2Fm%2F026gs6_?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D"
+            class="btn btn-primary">Visit Tirupati</a>
+          <a href="https://ttdevasthanams.ap.gov.in/home/dashboard" class="btn btn-primary" target="_blank">Official
+            Site</a>
+          <a href="https://en.wikipedia.org/wiki/Venkateswara_Temple,_Tirumala" class="btn btn-primary"
+            target="_blank">More Details</a>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="taj.jpeg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="pexels-freestockpro-1004584.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="pexels-syed-hasan-mehdi-270838-815880.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="Torism2.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Fourth slide label</h5>
+          <p>Some representative placeholder content for the fourth slide.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="Tourism3.jpeg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Fifth slide label</h5>
+          <p>Some representative placeholder content for the fifth slide.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="row" id="row2">
+
+    <!-- Badrinath Temple -->
+    <div class="card">
+      <img src="badrinath.jpeg" class="card-img-top" alt="Badrinath">
+      <div class="card-body">
+        <h5 class="card-title">Badrinath Temple</h5>
+        <p class="card-text">A mythical place in Badrinath, Uttarakhand</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Badrinath+Temple+Uttarakhand" class="btn btn-primary"
+          target="_blank">Visit Badrinath</a>
+        <a href="https://badrinath-kedarnath.gov.in/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Badrinath_Temple" class="btn btn-primary" target="_blank">More
+          Details</a>
+      </div>
+    </div>
+
+    <!-- Vaishno Devi Temple -->
+    <div class="card">
+      <img src="vaishnodevi.webp" class="card-img-top" alt="Vaishno Devi">
+      <div class="card-body">
+        <h5 class="card-title">Vaishno Devi Temple</h5>
+        <p class="card-text">A mythical place in Katra, Jammu & Kashmir</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Vaishno+Devi+Temple+Katra" class="btn btn-primary"
+          target="_blank">Visit Katra</a>
+        <a href="https://www.maavaishnodevi.org/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Vaishno_Devi_Temple" class="btn btn-primary" target="_blank">More
+          Details</a>
+      </div>
+    </div>
+
+    <!-- Amarnath Cave Temple -->
+    <div class="card">
+      <img src="amarnath-cave.jpg" class="card-img-top" alt="Amarnath">
+      <div class="card-body">
+        <h5 class="card-title">Amarnath Cave Temple</h5>
+        <p class="card-text">A mythical place in Jammu & Kashmir</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Amarnath+Cave+Temple" class="btn btn-primary"
+          target="_blank">Visit Amarnath</a>
+        <a href="https://jksasb.nic.in/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Amarnath_Temple" class="btn btn-primary" target="_blank">More Details</a>
+      </div>
+    </div>
+
+    <!-- Somnath Temple -->
+    <div class="card">
+      <img src="Somnath-Temple.jpg" class="card-img-top" alt="Somnath">
+      <div class="card-body">
+        <h5 class="card-title">Somnath Temple</h5>
+        <p class="card-text">A mythical place in Veraval, Gujarat</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Somnath+Temple+Gujarat" class="btn btn-primary"
+          target="_blank">Visit Somnath</a>
+        <a href="https://somnath.org/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Somnath_temple" class="btn btn-primary" target="_blank">More Details</a>
+      </div>
+    </div>
+
+    <!-- Kashi Vishwanath Temple -->
+    <div class="card">
+      <img src="kashi.jpg" class="card-img-top" alt="Varanasi">
+      <div class="card-body">
+        <h5 class="card-title">Kashi Vishwanath Temple</h5>
+        <p class="card-text">A mythical place in Varanasi, Uttar Pradesh</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Kashi+Vishwanath+Temple+Varanasi"
+          class="btn btn-primary" target="_blank">Visit Varanasi</a>
+        <a href="https://www.shrikashivishwanath.org/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Kashi_Vishwanath_Temple" class="btn btn-primary" target="_blank">More
+          Details</a>
+      </div>
+    </div>
+
+    <!-- Ramanathaswamy Temple (Rameswaram) -->
+    <div class="card">
+      <img src="Ramnath.jpg" class="card-img-top" alt="Rameswaram">
+      <div class="card-body">
+        <h5 class="card-title">Ramanathaswamy Temple</h5>
+        <p class="card-text">A mythical place in Rameswaram, Tamil Nadu</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Ramanathaswamy+Temple+Rameswaram"
+          class="btn btn-primary" target="_blank">Visit Rameswaram</a>
+        <a href="https://rameswaramramanathar.hrce.tn.gov.in/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Ramanathaswamy_Temple" class="btn btn-primary" target="_blank">More
+          Details</a>
+      </div>
+    </div>
+
+    <!-- Meenakshi Amman Temple -->
+    <div class="card">
+      <img src="Meenakshi-Amman-Temple.jpg" class="card-img-top" alt="Madurai">
+      <div class="card-body">
+        <h5 class="card-title">Meenakshi Amman Temple</h5>
+        <p class="card-text">A mythical place in Madurai, Tamil Nadu</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Meenakshi+Amman+Temple+Madurai" class="btn btn-primary"
+          target="_blank">Visit Madurai</a>
+
+        <a href="https://maduraimeenakshi.org/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Meenakshi_Temple" class="btn btn-primary" target="_blank">More
+          Details</a>
+      </div>
+    </div>
+
+    <!-- Kamakhya Temple -->
+    <div class="card">
+      <img src="Kamakhya-Temple-Assam.webp" class="card-img-top" alt="Kamakhya">
+      <div class="card-body">
+        <h5 class="card-title">Kamakhya Temple</h5>
+        <p class="card-text">A mythical place in Guwahati, Assam</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Kamakhya+Temple+Guwahati" class="btn btn-primary"
+          target="_blank">Visit Kamakhya</a>
+        <a href="https://www.maakamakhya.org/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Kamakhya_Temple" class="btn btn-primary" target="_blank">More Details</a>
+      </div>
+    </div>
+
+    <!-- Dwarkadhish Temple (Dwarka) -->
+    <div class="card">
+      <img src="Dwarkadhish.jpg" class="card-img-top" alt="Dwarka">
+      <div class="card-body">
+        <h5 class="card-title">Dwarkadhish Temple</h5>
+        <p class="card-text">A mythical place in Dwarka, Gujarat</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Dwarkadhish+Temple+Dwarka" class="btn btn-primary"
+          target="_blank">Visit Dwarka</a>
+        <a href="https://www.gujarattourism.com/saurashtra/devbhoomi-dwarka/dwarkadhish-temple.html"
+          class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Dwarkadhish_Temple" class="btn btn-primary" target="_blank">More
+          Details</a>
+      </div>
+    </div>
+
+    <!-- Sabarimala Temple -->
+    <div class="card">
+      <img src="Sabarimala.jpg" class="card-img-top" alt="Sabarimala">
+      <div class="card-body">
+        <h5 class="card-title">Sabarimala Temple</h5>
+        <p class="card-text">A mythical place in Pathanamthitta, Kerala</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Sabarimala+Temple+Kerala" class="btn btn-primary"
+          target="_blank">Visit Sabarimala</a>
+        <a href="https://sabarimala.kerala.gov.in/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Sabarimala_Temple" class="btn btn-primary" target="_blank">More
+          Details</a>
+      </div>
+    </div>
+
+    <!-- Chilika Lake -->
+    <div class="card">
+      <img src="chilika.webp" class="card-img-top" alt="Chilika Lake">
+      <div class="card-body">
+        <h5 class="card-title">Chilika Lake</h5>
+        <p class="card-text">Asia's largest brackish water lagoon, famous for bird watching and dolphin spotting.</p>
+        <a href="https://www.google.com/maps/place/Chilika+Lake/" class="btn btn-primary" target="_blank">Visit
+          Chilika</a>
+        <a href="http://www.chilika.com/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Chilika_Lake" class="btn btn-primary" target="_blank">More Details</a>
+      </div>
+    </div>
+
+    <!-- Dhauli Peace Pagoda -->
+    <div class="card">
+      <img src="Shanti_stupa.(Dhauli).jpg" class="card-img-top" alt="Dhauli Peace Pagoda">
+      <div class="card-body">
+        <h5 class="card-title">Dhauli Peace Pagoda</h5>
+        <p class="card-text">Famous for the peace pagoda built near the site of the Kalinga War.</p>
+        <a href="https://www.google.com/maps/place/Dhauli+Peace+Pagoda/" class="btn btn-primary" target="_blank">Visit
+          Dhauli</a>
+        <a href="https://odishatourism.gov.in/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Dhauli" class="btn btn-primary" target="_blank">More Details</a>
+      </div>
+    </div>
+
+    <!-- Chandipur Beach -->
+    <div class="card">
+      <img src="chandipur.jpg" class="card-img-top" alt="Chandipur Beach">
+      <div class="card-body">
+        <h5 class="card-title">Chandipur Beach</h5>
+        <p class="card-text">Known for its unique phenomenon of the sea receding up to 5 km during low tide.</p>
+        <a href="https://www.google.com/maps/place/Chandipur+Beach/" class="btn btn-primary" target="_blank">Visit
+          Chandipur</a>
+        <a href="https://odishatourism.gov.in/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Chandipur" class="btn btn-primary" target="_blank">More Details</a>
+      </div>
+    </div>
+
+    <!-- Udayagiri & Khandagiri Caves -->
+    <div class="card">
+      <img src="Udaygiri-Khandagiri-Caves.jpg" class="card-img-top" alt="Udayagiri & Khandagiri Caves">
+      <div class="card-body">
+        <h5 class="card-title">Udayagiri & Khandagiri Caves</h5>
+        <p class="card-text">Ancient Jain rock-cut caves with historical inscriptions.</p>
+        <a href="https://www.google.com/maps/place/Udayagiri+and+Khandagiri+Caves/" class="btn btn-primary"
+          target="_blank">Visit Caves</a>
+        <a href="https://odishatourism.gov.in/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Udayagiri_and_Khandagiri_Caves" class="btn btn-primary"
+          target="_blank">More Details</a>
+      </div>
+    </div>
+
+    <!-- Similipal National Park -->
+    <div class="card">
+      <img src="similipal.jpg" class="card-img-top" alt="Similipal National Park">
+      <div class="card-body">
+        <h5 class="card-title">Similipal National Park</h5>
+        <p class="card-text">A famous wildlife sanctuary and tiger reserve in Odisha.</p>
+        <a href="https://www.google.com/maps/place/Similipal+National+Park/" class="btn btn-primary"
+          target="_blank">Visit Similipal</a>
+        <a href="http://www.odishaforest.in/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Simlipal_National_Park" class="btn btn-primary" target="_blank">More
+          Details</a>
+      </div>
+    </div>
+    <!-- Golden Temple, Amritsar -->
+    <div class="card">
+      <img src="golden.jpg" class="card-img-top" alt="Golden Temple">
+      <div class="card-body">
+        <h5 class="card-title">Golden Temple</h5>
+        <p class="card-text">Famous Sikh pilgrimage site in Amritsar, Punjab.</p>
+        <a href="https://www.google.com/maps/place/Golden+Temple,+Amritsar" class="btn btn-primary"
+          target="_blank">Visit Amritsar</a>
+        <a href="https://www.goldentempleamritsar.org/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Golden_Temple" class="btn btn-primary" target="_blank">More Details</a>
+      </div>
+    </div>
+
+    <!-- Hampi, Karnataka -->
+    <div class="card">
+      <img src="hampi.jpg" class="card-img-top" alt="Hampi">
+      <div class="card-body">
+        <h5 class="card-title">Hampi</h5>
+        <p class="card-text">UNESCO World Heritage site, ruins of Vijayanagara Empire.</p>
+        <a href="https://www.google.com/maps/place/Hampi" class="btn btn-primary" target="_blank">Visit Hampi</a>
+        <a href="https://www.karnatakatourism.org/tour-item/hampi/" class="btn btn-primary" target="_blank">Official
+          Site</a>
+        <a href="https://en.wikipedia.org/wiki/Hampi" class="btn btn-primary" target="_blank">More Details</a>
+      </div>
+    </div>
+
+    <!-- Charminar, Hyderabad -->
+    <div class="card">
+      <img src="charminar.webp" class="card-img-top" alt="Charminar">
+      <div class="card-body">
+        <h5 class="card-title">Charminar</h5>
+        <p class="card-text">Iconic monument and mosque built in 1591 in Hyderabad.</p>
+        <a href="https://www.google.com/maps/place/Charminar,+Hyderabad" class="btn btn-primary" target="_blank">Visit
+          Hyderabad</a>
+        <a href="https://www.itravelindia.com/charminar/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Charminar" class="btn btn-primary" target="_blank">More Details</a>
+      </div>
+    </div>
+
+    <!-- Varanasi Ghats -->
+    <div class="card">
+      <img src="varanasi.webp" class="card-img-top" alt="Varanasi Ghats">
+      <div class="card-body">
+        <h5 class="card-title">Varanasi Ghats</h5>
+        <p class="card-text">Spiritual ghats along the Ganges River, Uttar Pradesh.</p>
+        <a href="https://www.google.com/maps/place/Varanasi" class="btn btn-primary" target="_blank">Visit Varanasi</a>
+        <a href="https://www.uptourism.gov.in/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Varanasi" class="btn btn-primary" target="_blank">More Details</a>
+      </div>
+    </div>
+
+    <!-- Ajanta Caves, Maharashtra -->
+    <div class="card">
+      <img src="Ajanta,_cave.jpg" class="card-img-top" alt="Ajanta Caves">
+      <div class="card-body">
+        <h5 class="card-title">Ajanta Caves</h5>
+        <p class="card-text">Ancient rock-cut Buddhist caves and UNESCO World Heritage site.</p>
+        <a href="https://www.google.com/maps/place/Ajanta+Caves" class="btn btn-primary" target="_blank">Visit
+          Ajanta</a>
+        <a href="https://www.maharashtratourism.gov.in/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Ajanta_Caves" class="btn btn-primary" target="_blank">More Details</a>
+      </div>
+    </div>
+
+    <!-- Ellora Caves, Maharashtra -->
+    <div class="card">
+      <img src="Ellora,_cave.jpg" class="card-img-top" alt="Ellora Caves">
+      <div class="card-body">
+        <h5 class="card-title">Ellora Caves</h5>
+        <p class="card-text">34 rock-cut monuments of Hindu, Buddhist, and Jain heritage.</p>
+        <a href="https://www.google.com/maps/place/Ellora+Caves" class="btn btn-primary" target="_blank">Visit
+          Ellora</a>
+        <a href="https://www.maharashtratourism.gov.in/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Ellora_Caves" class="btn btn-primary" target="_blank">More Details</a>
+      </div>
+    </div>
+
+    <!-- Rishikesh, Uttarakhand -->
+    <div class="card">
+      <img src="rishikesh.jpeg" class="card-img-top" alt="Rishikesh">
+      <div class="card-body">
+        <h5 class="card-title">Rishikesh</h5>
+        <p class="card-text">Yoga and spiritual hub along the Ganges River.</p>
+        <a href="https://www.google.com/maps/place/Rishikesh" class="btn btn-primary" target="_blank">Visit
+          Rishikesh</a>
+        <a href="https://uttarakhandtourism.gov.in/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Rishikesh" class="btn btn-primary" target="_blank">More Details</a>
+      </div>
+    </div>
+
+    <!-- Mahabalipuram, Tamil Nadu -->
+    <div class="card">
+      <img src="Mahabalipuram.webp" class="card-img-top" alt="Mahabalipuram">
+      <div class="card-body">
+        <h5 class="card-title">Mahabalipuram</h5>
+        <p class="card-text">UNESCO heritage site known for rock-cut temples and Shore Temple.</p>
+        <a href="https://www.google.com/maps/place/Mahabalipuram" class="btn btn-primary" target="_blank">Visit
+          Mahabalipuram</a>
+        <a href="https://www.tamilnadutourism.tn.gov.in/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Mahabalipuram" class="btn btn-primary" target="_blank">More Details</a>
+      </div>
+    </div>
+
+    <!-- Sanchi Stupa, Madhya Pradesh -->
+    <div class="card">
+      <img src="sanchi.jpg" class="card-img-top" alt="Sanchi Stupa">
+      <div class="card-body">
+        <h5 class="card-title">Sanchi Stupa</h5>
+        <p class="card-text">Ancient Buddhist stupa and UNESCO World Heritage site.</p>
+        <a href="https://www.google.com/maps/place/Sanchi" class="btn btn-primary" target="_blank">Visit Sanchi</a>
+        <a href="https://www.mptourism.com/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Sanchi" class="btn btn-primary" target="_blank">More Details</a>
+      </div>
+    </div>
+
+    <!-- Fatehpur Sikri, Uttar Pradesh -->
+    <div class="card">
+      <img src="sikandra.jpeg" class="card-img-top" alt="Fatehpur Sikri">
+      <div class="card-body">
+        <h5 class="card-title">Fatehpur Sikri</h5>
+        <p class="card-text">UNESCO heritage site built by Mughal Emperor Akbar in 16th century.</p>
+        <a href="https://www.google.com/maps/place/Fatehpur+Sikri" class="btn btn-primary" target="_blank">Visit
+          Fatehpur Sikri</a>
+        <a href="https://www.uptourism.gov.in/" class="btn btn-primary" target="_blank">Official Site</a>
+        <a href="https://en.wikipedia.org/wiki/Fatehpur_Sikri" class="btn btn-primary" target="_blank">More Details</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Form -->
+  <!-- Footer -->
+  <footer>
+    <div style="display: flex; justify-content: center; margin-top: 20px;">
+      <button class="btn btn-warning"><a href="loginpage1.html">LOGIN / SIGN UP</a></button>
+    </div>
+    <div class="footer">
+      <div class="footer-links">
+        <a href="#" class="footer-link">FAQs</a>
+        <a href="#" class="footer-link">Contact Us</a>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms of Use</a>
+      </div>
+      <p class="f1">
+      © 2025 Lovely India. All rights reserved.
+    </p>
+    </div>
+    
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
